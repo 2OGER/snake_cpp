@@ -7,6 +7,7 @@
 using namespace std;
 
 bool gameOver;
+bool gamePause;
 const int width=20;
 const int heigth=20;
 int x, y, fruitx, fruity, score;
