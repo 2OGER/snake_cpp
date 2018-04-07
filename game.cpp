@@ -144,7 +144,7 @@ void Setup(){
 	
 int main(){
 	Setup();
-	while (!gameOver){
+	while (!gameOver && !gamePause ){
 		Draw();
 		Input();
 		Logic();
