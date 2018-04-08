@@ -18,6 +18,7 @@ eDirection dir;
 
 void Setup(){
 	gameOver=false;
+	gamePause=false;
 	dir=STOP;
 	x=width/2-1;
 	y=heigth/2-1;
@@ -80,6 +81,9 @@ void Setup(){
 				break;
 			case 'x':
 				gameOver= true;
+				break;
+			case 'p':
+				gamePause = !gamePause;
 				break;
 			}
 		}
@@ -144,10 +148,12 @@ void Setup(){
 	
 int main(){
 	Setup();
-	while (!gameOver && !gamePause ){
-		Draw();
+	while (!gameOver){
+		if(!gamePause)
+			Draw();
 		Input();
-		Logic();
+		if(!gamePause)
+			Logic();
 	}
 	
 	return 0;
